@@ -36,7 +36,9 @@ body {
     background-color: purple;
   }
   
-
+.green{
+  display: none;
+}
   
   .card.red:hover {
     background-color: red;
@@ -71,7 +73,8 @@ body {
   
   .textbox-container1 {
     margin-top: 5px;
-    
+    position: absolute;
+    bottom: 32%;
     display: flex;
   }
   
@@ -82,7 +85,7 @@ body {
   .textbox-container {
 
     position: absolute;
-    top:80% ;
+    bottom: 5%;
     margin-top: 3px;
     display: flex;
     justify-content: space-between;
@@ -153,3 +156,8 @@ body {
     justify-content: center;
   }
 
+
+  #heading{
+    display: flex;
+    justify-content: center;
+  }

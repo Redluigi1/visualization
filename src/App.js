@@ -27,6 +27,7 @@ const App = () => {
   const [selectedClass, setSelectedClass] = useState(null);
   const [selectedInfo, setSelectedInfo] = useState(null);
   const [selectedCancelledInfo, setSelectedCancelledInfo] = useState(null);
+  const [showAllPNRs, setShowAllPNRs] = useState(false);
   const move = () => {
     
 
@@ -34,13 +35,16 @@ const App = () => {
     
     
     setTimeout(() => { document.getElementById('mover').style.transform="translate(1040px)"; }, 50);
-    try{
-    setTimeout(() => {document.getElementById('mover').style.display="none";
     
-    
-    setTimeout(() => { document.getElementById('mover').style.transform="translate(200px)"; }, 50); }, 3000);
-    }
+    setTimeout(() => {try{document.getElementById('mover').style.display="none";}
     catch{}
+    
+    
+    setTimeout(() => { try{document.getElementById('mover').style.transform="translate(200px)";}  catch{}}
+    
+    , 50);
+  }, 3000);
+    
       };
 
   useEffect(() => {
@@ -49,8 +53,15 @@ const App = () => {
   }, [highlightFile1, highlightFile2]);
 
   const handleButtonClick = () => {
-    setHighlightFile1(!highlightFile1);
-    setHighlightFile2(!highlightFile2);
+    if (showAllPNRs) {
+      setHighlightFile1(false);
+      setHighlightFile2(false);
+      setShowAllPNRs(false);
+    } else {
+      setHighlightFile1(true);
+      setHighlightFile2(true);
+      setShowAllPNRs(true);
+    }
   };
 
   const handleCardClick = (entry) => {
@@ -87,7 +98,9 @@ const App = () => {
 
   return (
     <div>
+      <div id="heading">
       <h1>PNR Numbers</h1>
+      </div>
       <div className="card-container">
         {shuffledFile1.map((entry, index) => (
           <div
@@ -111,7 +124,7 @@ const App = () => {
         ))}
       </div>
       <div id="showpnr">
-      <button onClick={handleButtonClick}>Show affected PNRs</button>
+      <button onClick={handleButtonClick} id="pnrshower">{showAllPNRs ? 'Show all PNRs' : 'Show affected PNRs'}</button>
       </div>
       <p></p>
       <p></p>
