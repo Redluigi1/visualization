@@ -1,10 +1,12 @@
 // App.js
+  
 import React, { useState, useEffect } from 'react';
 import file1 from './file1.json';
 import file2 from './file2.json';
 import './styles.css'; // Import the CSS file
 import icon from './icon2.jpeg'
 import plane from './plane.png'
+
 
 const shuffleArray = (array) => {
   // Fisher-Yates (Knuth) shuffle algorithm
@@ -31,12 +33,12 @@ const App = () => {
       document.getElementById('mover').style.display="flex";
     
     
-    setTimeout(() => { document.getElementById('mover').style.transform="translate(1150px)"; }, 50);
+    setTimeout(() => { document.getElementById('mover').style.transform="translate(1040px)"; }, 50);
     try{
     setTimeout(() => {document.getElementById('mover').style.display="none";
     
     
-    setTimeout(() => { document.getElementById('mover').style.transform="translate(270px)"; }, 50); }, 3000);
+    setTimeout(() => { document.getElementById('mover').style.transform="translate(200px)"; }, 50); }, 3000);
     }
     catch{}
       };
@@ -108,7 +110,9 @@ const App = () => {
           </div>
         ))}
       </div>
+      <div id="showpnr">
       <button onClick={handleButtonClick}>Show affected PNRs</button>
+      </div>
       <p></p>
       <p></p>
       <div className="textbox-container1">

@@ -32,14 +32,11 @@ body {
   }
   
   .red {
-    color: red;
-    background-color: rgb(239, 200, 200);
+    color: white;
+    background-color: purple;
   }
   
-  .green {
-    color: green;
-    background-color: rgb(161, 197, 161);
-  }
+
   
   .card.red:hover {
     background-color: red;
@@ -52,8 +49,8 @@ body {
   }
   
   button {
-    background-color: #a9ad4c;
-    color: white;
+    background-color: #e8b44b;
+    color: black;
     border: none;
     padding: 10px 20px;
     text-align: center;
@@ -67,7 +64,9 @@ body {
   }
   
   button:hover {
-    background-color: #63652c;
+    background-color: #d7d67c;
+    transform: scale(1.05);
+    
   }
   
   .textbox-container1 {
@@ -109,6 +108,7 @@ body {
   .textbox.rounded{
     display: flex;
     flex-direction: column;
+
     
   }
   
@@ -117,6 +117,7 @@ body {
     border-radius: 16px;
     height: 100px;
     padding: 5px;
+    resize: none;
   }
   
   .textbox.smaller {
@@ -126,20 +127,29 @@ body {
     margin-top: 10px;
   }
   #mover{
-    transition: 2s ease;
+    transition: 3s ease;
     flex-direction: column;
     left: 20px;
   }
-  #right{
-    position: absolute;
-    left:1300px;
 
-  }
 
   #leftplane,#rightplane{
     position: absolute;
-    top:-190%;
+    top:-185%;
     left: -15px;
     width:190px;
     height: 190px;
+  } 
+  
+  #right{
+    position: absolute;
+    left:1000px;
+    margin-right: -300px;
   }
+
+  #showpnr{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
